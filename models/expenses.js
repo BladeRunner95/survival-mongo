@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Group = require("./groups");
 const Schema = mongoose.Schema;
 
 // create expense schema & model
@@ -29,7 +30,11 @@ const ExpenseSchema = new Schema({
     },
     createdAt: {
         type: String
-    }
+    },
+    groupIds: [{
+        type: Schema.Types.ObjectId,
+        ref: Group
+    }]
 });
 
 
